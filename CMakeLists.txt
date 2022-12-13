@@ -24,9 +24,9 @@ set(SOURCES ${source_files})
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED true)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
-set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_BUILD_TYPE Release)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+add_executable(${PROJECT_NAME} WIN32 ${SOURCES})
 
 target_precompile_headers(${PROJECT_NAME}
     PRIVATE ${PROJECT_SOURCE_DIR}/Sources/stdpch.hpp
@@ -42,4 +42,4 @@ target_link_directories(${PROJECT_NAME}
     PRIVATE "C:/Program Files/SFML/lib"
 )
 
-target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system sfml-audio)
+target_link_libraries(${PROJECT_NAME} sfml-graphics sfml-window sfml-system sfml-audio sfml-main)
